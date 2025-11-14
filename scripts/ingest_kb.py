@@ -1,6 +1,7 @@
 import argparse
 from tqdm import tqdm
-
+import sys
+sys.path.append("/content/rag_wixqa/src")
 from rag_wixqa.data.load_wixqa import load_kb_docs
 from rag_wixqa.chunking.strategies import CHUNKERS, ChunkMethod
 from rag_wixqa.vectorstores.chroma_store import build_chroma_from_chunks

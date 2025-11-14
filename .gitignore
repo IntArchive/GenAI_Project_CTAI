@@ -3,3 +3,4 @@ sample_data/
 
 haidm
 haidm.pub
+*/__pycache__/
