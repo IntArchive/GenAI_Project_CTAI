@@ -7,7 +7,10 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from langchain_core.documents import Document
 
-from ..vectorstores.chroma_store import load_chroma_collection
+import sys
+
+sys.path.append("/content/rag_wixqa/src/")
+from rag_wixqa.vectorstores.chroma_store import load_chroma_collection
 
 
 @dataclass
@@ -101,7 +104,7 @@ class Qwen3RAGPipeline:
         self,
         messages: List[Dict[str, Any]],
         max_new_tokens: Optional[int] = None,
-        temperature: Optional<float] = None,
+        temperature: Optional[float] = None,
     ) -> str:
         """
         Call Qwen3 to generate an answer from messages.
