@@ -1,6 +1,3 @@
-import sys
-sys.path.append("/content/")
-sys.path.append("/content/rag_wixqa/rag_wixqa")
 from rag_wixqa.rag.pipeline import Qwen3RAGPipeline, RAGConfig
 
 
@@ -16,7 +13,7 @@ def main():
 
     rag = Qwen3RAGPipeline(cfg)
 
-    question = "How do I connect my Wix website to a custom domain?"
+    question = "I need to know if more information is required for Wix payment verification status for my individual account."
     result = rag.answer(question, return_docs=True)
 
     print("\n=== ANSWER ===")
