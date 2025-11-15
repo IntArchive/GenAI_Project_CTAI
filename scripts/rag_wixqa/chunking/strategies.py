@@ -38,7 +38,7 @@ def recursive_chunk(
 
     chunks: List[Chunk] = []
     for d in docs:
-        texts = splitter.split_text(d.text)
+        texts = splitter.split_text(d.contents)
         for i, t in enumerate(texts):
             chunks.append(
                 Chunk(
@@ -64,7 +64,7 @@ def token_chunk(
 
     chunks: List[Chunk] = []
     for d in docs:
-        texts = splitter.split_text(d.text)
+        texts = splitter.split_text(d.contents)
         for i, t in enumerate(texts):
             chunks.append(
                 Chunk(

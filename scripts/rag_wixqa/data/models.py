@@ -6,11 +6,11 @@ from typing import List, Optional
 class KBDoc:
     doc_id: str
     title: Optional[str]
-    text: str
+    contents: str
 
 
 @dataclass
 class QAPair:
     question: str
     answer: str
-    kb_ids: List[str]   # ids of relevant KB docs (adapt column name to real schema)
+    article_ids: List[str]   # ids of relevant KB docs (adapt column name to real schema)

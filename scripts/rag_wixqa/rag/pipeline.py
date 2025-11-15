@@ -64,7 +64,7 @@ class Qwen3RAGPipeline:
         retriever = self.vectorstore.as_retriever(
             search_type="similarity", search_kwargs={"k": k}
         )
-        return retriever.get_relevant_documents(question)
+        return retriever.invoke(question)
 
     def _format_context(self, docs: List[Document]) -> str:
         """

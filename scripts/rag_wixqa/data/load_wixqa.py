@@ -25,10 +25,12 @@ def load_kb_docs(split: str = "train") -> List[KBDoc]:
         # TODO: adjust these keys to the actual schema
         doc_id = row.get("doc_id") or row.get("id")
         title = row.get("title")
-        text = row.get("content") or row.get("text") or row.get("body")
-        if not doc_id or not text:
+        contents = row.get("contents")
+        
+
+        if not doc_id or not contents:
             continue
-        docs.append(KBDoc(doc_id=doc_id, title=title, text=text))
+        docs.append(KBDoc(doc_id=doc_id, title=title, contents=contents))
     return docs
 
 
@@ -52,7 +54,8 @@ def load_qa_pairs(split: str = "test") -> List[QAPair]:
             row.get("kb_ids")
             or row.get("doc_ids")
             or row.get("positive_kb_ids")
+            or row.get("article_ids")
             or []
         )
-        qa_list.append(QAPair(question=question, answer=answer, kb_ids=list(kb_ids)))
+        qa_list.append(QAPair(question=question, answer=answer, article_ids=list(kb_ids)))
     return qa_list

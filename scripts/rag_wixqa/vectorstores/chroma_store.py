@@ -1,7 +1,7 @@
 from typing import List
 from chromadb.config import Settings
 import chromadb
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_core.documents import Document
 
 from ..embeddings.embedding_models import get_default_embedding
