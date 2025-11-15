@@ -95,7 +95,7 @@ def semantic_chunk(
     chunks: List[Chunk] = []
     for d in docs:
         # naive sentence split; you could use nltk/spacy instead
-        sentences = [s.strip() for s in d.text.split(".") if s.strip()]
+        sentences = [s.strip() for s in d.contents.split(".") if s.strip()]
         if not sentences:
             continue
 

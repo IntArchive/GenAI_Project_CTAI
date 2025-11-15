@@ -29,3 +29,10 @@ paths = Paths()
 hf_cfg = HFConfigs()
 emb_cfg = EmbeddingConfig()
 chunk_cfg = ChunkingConfig()
+
+
+if __name__ == "__main__":
+    print("paths.root", paths.root)
+    print("paths.data_raw ", paths.data_raw)
+    print("paths.data_processed ", paths.data_processed)
+    print("paths.chroma_root ", paths.chroma_root)

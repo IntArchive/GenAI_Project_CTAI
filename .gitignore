@@ -3,6 +3,6 @@ sample_data/
 
 haidm
 haidm.pub
-*/__pycache__
-/data/chroma//
+__pycache__/
+/data/chroma/
 data/
