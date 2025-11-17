@@ -39,7 +39,7 @@ def evaluate_retrieval_for_method(
         if not qa.kb_ids:
             # if no ground-truth doc ids, skip this question
             continue
-        docs = retriever.get_relevant_documents(qa.question)
+        docs = retriever.invoke(qa.question)
         retrieved_ids = {d.metadata.get("doc_id") for d in docs}
         if retrieved_ids & set(qa.kb_ids):
             hits += 1

@@ -5,7 +5,7 @@ from rag_wixqa.eval.retrieval_eval import evaluate_all_methods
 
 def main():
     print("Loading QA pairs...")
-    qa_pairs = load_qa_pairs(split="test")  # or "validation" depending on config
+    qa_pairs = load_qa_pairs(split="train")  # or "validation" depending on config
 
     methods: list[ChunkMethod] = ["recursive", "token", "semantic"]
 
