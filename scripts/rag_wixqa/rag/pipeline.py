@@ -159,8 +159,6 @@ class Qwen3RAGPipeline:
             }
         """
         docs = self.retrieve(question, k=top_k)
-        print(len(docs))
-        print(docs)
         messages = self._build_messages(question, docs)
         answer = self._generate(
             messages,

@@ -13,4 +13,9 @@ class KBDoc:
 class QAPair:
     question: str
     answer: str
-    article_ids: List[str]   # ids of relevant KB docs (adapt column name to real schema)
+    kb_ids: List[str]
+    article_ids: Optional[List[str]] = None  # optional alias for backwards compatibility
+
+    def __post_init__(self) -> None:
+        if self.article_ids is None:
+            self.article_ids = self.kb_ids

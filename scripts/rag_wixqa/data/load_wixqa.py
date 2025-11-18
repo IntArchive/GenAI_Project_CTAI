@@ -57,5 +57,11 @@ def load_qa_pairs(split: str = "test") -> List[QAPair]:
             or row.get("article_ids")
             or []
         )
-        qa_list.append(QAPair(question=question, answer=answer, article_ids=list(kb_ids)))
+        qa_list.append(
+            QAPair(
+                question=question,
+                answer=answer,
+                kb_ids=list(kb_ids),
+            )
+        )
     return qa_list
